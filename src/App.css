@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Poppins:ital,wght@1,800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Merriweather"; 
+}
+:root{
+    --primary-color:#ffffff;
+    --secondary-color:#121d22f2;
+}
+body{
+ background-color:var(--primary-color); 
+}
+h1{
+    font-family: "Poppins",sans-serif;
+    margin-left: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    position: relative;
+    color:#ffffff;
+    }
+.nav{
+  background-color:var(--secondary-color);
+  height: 80px;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-btn{
+    display: flex;
+
+}
+.inputText{
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 2rem 0 0 2rem;
+    font-size: 1rem;
+    color: black;
+    background-color: var(--primary-color);
+}
+.inputText::placeholder{
+    color: black;
+}
+
+.search-btn button{
+    background-color: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0 2rem 2rem 0;
+    color: black;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+.container{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.movie{
+    background-color: var(--primary-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    margin:1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.movie .poster{
+    width: 100%;
+    height: 250px;
+
+}
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.movie-details .box{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.movie-details .title{
+    width: 100px;
+    text-align: center;
+}
+.movie-details .overview{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 100%;
+    background-color: var(--secondary-color);
+    opacity: 0.9;
+    color: white;
+    box-sizing: border-box;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out;
+    overflow-y: auto;
+    transform: translateY(101%);
+
+}
+.movie-details:hover .overview{
+    transform: translateY(0%);
+}
+.title{
+font-size: 1.9rem;
+font-weight: bold;
+position: relative;
+margin-top: 0px;
+}
+.rating{
+position: relative;
+margin-top: 100px;
+margin-left: 0;
+}
+
+.login-box {
+    width: 360px;
+    height: 280px;
+    position:relative;
+    margin-top: auto;
+    padding-top: 0;
+    margin-left: 50px;
+    border-radius: 3px;
+    box-sizing: border-box;
+ }
+form {
+    width: 300px;
+    margin-left: 20px;
+}
+  
+form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+ }
+ 
+form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+.add-btn {
+   background-color:var(--secondary-color);
+   font-weight: bold;
+    width: 100%;
+    height: 30px;
+    margin-top:17px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px
+}
+.add-movie{
+    position: relative;
+    border-radius: 0;
+    height: 80px;
+    width: 150px;
+    background-color: var(--secondary-color);
+    padding: 0px;
+    border-width: 0px;
+    margin-left: 0px;
+}
+.add-movie:hover{
+    background-color: #01070af2;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.modal-body{
+    margin-bottom: 30px;
+}
+.add-nav{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+    padding-right: 0;
+}
+.star-rating{
+    margin-left: 70px;
+    margin-top: 5px;
+}
