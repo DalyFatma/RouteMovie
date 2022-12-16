@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaPlay } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating'
 
 const MovieList = (props) => {  
@@ -9,19 +11,19 @@ const MovieList = (props) => {
                 <div className='movie'>
                     <img className='poster' src={movie.posterUrl} alt='movie' />
                 <div className='movie-details'>
-                    <div className='box'>
-                        <h2 className='title' >{movie.title}</h2>
+                    <div>
+                        <h5 >{movie.title}</h5>
+                        </div>
+                        <div className='d-flex'>
                         <Rating
                          className='rating'
                          iconsCount={5} 
                          initialValue={movie.rating}
-                         readOnly={true}
-                         size="20px" />
+                         readonly={true}
+                         size="20px" />  
+                    <Link className='btn-details' to={`/details/${movie.id}`}><FaPlay className='playf' ></FaPlay></Link>
                     </div>
-                    <div className='overview'>
-                        <h1>Overview</h1>
-                       {movie.description}
-                    </div> 
+                    
                       </div>
                       </div>
                 

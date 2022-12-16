@@ -6,6 +6,7 @@ export const movies = [
         posterUrl: "../images/Kingsglaive.jpg",
         rating: 4,
         trailerSrc: "https://www.youtube.com/embed/htnkOpknGok"
+        
     },
     {
         id:1,

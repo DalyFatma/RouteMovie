@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Rating } from 'react-simple-star-rating';
+import { Link } from 'react-router-dom';
 
 function Navbar({setSearch,setRating}) {
   const handleRating = (rate) => {
@@ -24,10 +25,13 @@ function Navbar({setSearch,setRating}) {
                 onPointerEnter={onPointerEnter}
                 onPointerLeave={onPointerLeave}
                 onPointerMove={onPointerMove}
-                size="16px"
-
-                 />
-        </form>
+                size="16px"/>
+         </form>
+        <button className="add-movie">
+         <Link to="/add">
+       Add Movie
+       </Link>
+      </button>
     </div>
     </>
   )

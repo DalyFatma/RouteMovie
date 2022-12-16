@@ -5,26 +5,35 @@ import { movies } from './Components/data/data';
 import AddMovie from './Components/AddMovie/AddMovie';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import MovieDetails from './Components/MovieDetails/MovieDetails';
 const App = () => {
-	const [Newmovie, setNewmovie] = useState(movies);
+	const [Newmovies, setNewmovies] = useState(movies);
   const [search, setSearch] = useState("")
   const [rating, setRating] = useState(0)
-  const addMovie=(title,desc,rating,id,posterUrl,trailerSrc)=>{
-    setNewmovie([...Newmovie,{title,description:desc,rating, id:Newmovie.length+1,posterUrl,trailerSrc}])
+  const addMovie=(title,desc,rating,posterUrl,trailerSrc)=>{
+    setNewmovies([...Newmovies,{title,description:desc,rating, id:Newmovies.length+1,posterUrl,trailerSrc}])
   }
-  {/*setNewList(newList.map(el=>el.id?el:{...el,rating:e}))*/}
 	return (
-		<div className='container-fluid movie-app'>
-			<div className='row'>
+    
+		<>
+      <Routes>
+        <Route path='/' element={
+        <div className='row'>
         <div className="add-nav">
-        <Navbar setSearch={setSearch} setRating={setRating}   />
-        <AddMovie addMovie={addMovie} />
+        <Navbar setSearch={setSearch} setRating={setRating}/>
         </div>
         <div className='container'>
-        <MovieList movies={Newmovie.filter((el)=>el.title.toLocaleLowerCase().includes(search.toLocaleLowerCase().trim()) && el.rating>=rating)} />
+        <MovieList movies={Newmovies.filter((el)=>el.title.toLocaleLowerCase().includes(search.toLocaleLowerCase().trim()) && el.rating>=rating)} />
         </div>
 			</div>
-		</div>
+    }/>
+
+        <Route path='/add' element={<div> <Navbar/> <AddMovie addMovie={addMovie} /> </div>}/>
+        <Route path='/details/:x' element={<> <Navbar/> <MovieDetails data={Newmovies}/> </>}/>
+      </Routes>
+
+		</>
 	);
 };
 export default App;
